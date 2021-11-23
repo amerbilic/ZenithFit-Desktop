@@ -1,0 +1,52 @@
+import TextInput from './components/atoms/textInput'
+
+function App() {
+  return (
+    <div className="pageDiv">
+      <div className="containerMain d-flex p-2 bd-highlight mt-5">
+        <div className="containerSub d-flex flex-column justify-content-center align-items-center">
+          <h4>ZenithFit Admin Panel</h4>
+          <div className="btnContainer mt-4 mb-2 d-flex justify-content-between">
+            <button className="btn-primary" title="Create">
+              Articles
+            </button>
+            <button className="btn-primary" title="Create">
+              Users
+            </button>
+            <button className="btn-primary" title="Create">
+              Orders
+            </button>
+            <button className="btn-primary" title="Create">
+              Reports
+            </button>
+          </div>
+          <TextInput name={'admin'} id={2} value={320} onChange={()=>{}}/>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+   <SelectInput
+          label="Vendor: "
+          id="vendor"
+          name="vendor"
+          onChange={() => {}}
+          options={['']}
+        />
+        <SelectInput
+          className="u-mt-small"
+          label="Product Type: "
+          id="productType"
+          name="productType"
+          onChange={() => {}}
+          options={['']}
+        />
+        <button
+          type="button"
+          onClick={() => {}}
+          className="u-mt-medium u-mb-medium thin-btn"
+        >
+          Refresh
+        </button>
+
