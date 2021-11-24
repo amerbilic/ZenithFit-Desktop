@@ -28,6 +28,7 @@ const OrderDetailsPage = () => {
           }
         })
       const data = response.data
+
       setOrders(data)
     }
 

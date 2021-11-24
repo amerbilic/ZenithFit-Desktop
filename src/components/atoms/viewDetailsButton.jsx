@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ViewDetailsButton = ({ pathname, id,orderItems }) => (
-  <Link to={{ pathname: `${pathname}?id=${id}`, state:orderItems}}>
+const ViewDetailsButton = ({ pathname, id}) => (
+  <Link to={{ pathname: `${pathname}?id=${id}`}}>
     <button type="button" className="button-icon" onClick={() => {}}>
       <svg
         xmlns="http://www.w3.org/2000/svg"

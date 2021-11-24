@@ -6,6 +6,7 @@ import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import ViewDetailsButton from '../atoms/viewDetailsButton'
 import BackChevronLink from '../atoms/backChevronLink'
+import {readableDate} from '../../helpers/readableDate'
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([])
@@ -21,7 +22,10 @@ const OrdersPage = () => {
           }
         })
       const data = response.data
-      setOrders(data)
+      const sortedList = data.sort(function(a, b) { 
+        return a.id - b.id  ||  a.name.localeCompare(b.name);
+      });
+      setOrders(sortedList)
     }
 
     fetchData()
@@ -44,7 +48,7 @@ const OrdersPage = () => {
                 order.user.username,
                 order.user.firstname,
                 order.user.lastname,
-                order.createdAt,
+                readableDate(order.createdAt),
                 <ViewDetailsButton pathname="/orderDetails" id={order.id} orderItems={order.order_items}/>
               ]}
             />

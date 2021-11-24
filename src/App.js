@@ -8,6 +8,7 @@ import UserListPage from './components/pages/userList'
 import ProductListPage from './components/pages/productList'
 import UserAddPage from './components/pages/userAdd'
 import ProductAddPage from './components/pages/productAdd'
+import ProductEditPage from './components/pages/productEdit'
 
 function App() {
   const location = useLocation()
@@ -22,6 +23,7 @@ function App() {
       <Route  path="/productList" element={<ProductListPage/>} />
       <Route  path="/userAdd" element={<UserAddPage/>} />
       <Route  path="/productAdd" element={<ProductAddPage/>} />
+      <Route  path="/productEdit" element={<ProductEditPage/>} />
     </Routes>
   )
 }

@@ -6,6 +6,7 @@ import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import ViewDetailsButton from '../atoms/viewDetailsButton'
 import BackChevronLink from '../atoms/backChevronLink'
+import {readableDate} from '../../helpers/readableDate'
 
 const UserListPage = () => {
   const [users, setUsers] = useState([])
@@ -21,30 +22,35 @@ const UserListPage = () => {
           }
         })
       const data = response.data
-      setUsers(data)
+      const sortedList = data.sort(function(a, b) { 
+        return a.id - b.id  ||  a.name.localeCompare(b.name);
+      });
+      setUsers(sortedList)
     }
 
     fetchData()
   },[])
+
 
   return (
     <div>
       <div className="u-t-center d-flex flex-column">
         <div className="heading d-flex flex-row">
           <BackChevronLink to="/" />
-          <h1>Orders List</h1>
+          <h1>User List</h1>
         </div>
         <DataTable>
-          <TableHeader headings={['ID','Username', "First Name", "Last Name", "Created", "Updated"]} />
+          <TableHeader headings={['ID',"Email",'Username', "First Name", "Last Name", "Created", "Updated"]} />
           {users.map(user => (
             <TableRow  key={user.id}
               fields={[
                 user.id,
+                user.email,
                 user.username,
                 user.firstname,
                 user.lastname,
-                user.createdAt,
-                user.updatedAt,
+                readableDate(user.createdAt),
+                readableDate(user.updatedAt),
               ]}
             />
           ))}
