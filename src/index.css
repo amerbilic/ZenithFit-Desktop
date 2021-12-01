@@ -28,12 +28,7 @@ html {
 body {
   position: relative;
   color: white;
-  background-image: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
+  background:#484a4d;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: sans-serif;
@@ -71,11 +66,15 @@ button {
   border-radius: 10px;
   border: none;
   appearance: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
     0px 18px 88px -4px rgba(24, 39, 75, 0.14);
   transition: transform ease-in 0.1s;
   cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
   /* &:hover {
     transform: scale(1.05);
@@ -125,14 +124,14 @@ th {
   margin-bottom: 8px;
 }
 
-.input-wrapper   input {
+.input-wrapper input {
   border-radius: 4px;
   width: 300px;
   height: 24px;
 }
 
 .button-icon {
-  margin-right: 8px;
+  margin-right: 5px;
 
   /*&:hover {
     transform: scale(1.25);
@@ -193,5 +192,5 @@ th {
 }
 
 .btn-chunky {
-  height: 75px;
+  height: 85px;
 }

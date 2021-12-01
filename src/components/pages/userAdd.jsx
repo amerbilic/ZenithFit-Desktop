@@ -63,15 +63,15 @@ const UserAddPage = () => {
   }
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center justify-content-center">
       <div className="u-t-center d-flex flex-column">
-        <div className="heading d-flex flex-row">
+      <div className="heading d-flex flex-row align-items-center justify-content-center">
           <BackChevronLink to="/" />
           <h1>Create New User</h1>
         </div>
       </div>
       <form onSubmit={submitHandler}>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
           <label for="Email" class="form-label">
             Email address
           </label>
@@ -84,7 +84,7 @@ const UserAddPage = () => {
             onChange={emailHandler}
           />
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
           <label for="Username" class="form-label">
             Username
           </label>
@@ -97,7 +97,7 @@ const UserAddPage = () => {
             onChange={usernameHandler}
           />
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
           <label for="FirstName" class="form-label">
             First Name
           </label>
@@ -110,7 +110,7 @@ const UserAddPage = () => {
             onChange={firstNameHandler}
           />
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
           <label for="LastName" class="form-label">
             Last Name
           </label>
@@ -123,7 +123,7 @@ const UserAddPage = () => {
             onChange={lastNameHandler}
           />
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
           <label for="Password" class="form-label">
             Password
           </label>
@@ -136,7 +136,7 @@ const UserAddPage = () => {
             onChange={passwordHandler}
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>

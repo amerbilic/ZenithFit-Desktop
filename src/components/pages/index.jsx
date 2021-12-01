@@ -10,25 +10,25 @@ class Index extends React.PureComponent {
           <Link to="/users">
             <button type="button" className="btn-chunky">
               <span role="img" className="button-icon">⚙</span>
-              View Users
+               Users
             </button>
           </Link>
           <Link to="/products">
             <button type="button" className="btn-chunky">
               <span role="img" className="button-icon">🗄️</span>
-              View Products
+               Products
             </button>
           </Link>
           <Link to="/orders">
             <button type="button" className="btn-chunky">
               <span role="img" className="button-icon">🛍️</span>
-              View Orders
+               Orders
             </button>
           </Link>
           <Link to="/reports">
             <button type="button" className="btn-chunky">
               <span role="img" className="button-icon">🛍️</span>
-              View Reports
+              Reports
             </button>
           </Link>
         </div>

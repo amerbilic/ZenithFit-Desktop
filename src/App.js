@@ -9,6 +9,7 @@ import ProductListPage from './components/pages/productList'
 import UserAddPage from './components/pages/userAdd'
 import ProductAddPage from './components/pages/productAdd'
 import ProductEditPage from './components/pages/productEdit'
+import ReportsPage from './components/pages/reportsPage'
 
 function App() {
   const location = useLocation()
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/products" element={<ProductsPage/>} />
       <Route exact path="/users" element={<UsersPage/>} />
       <Route exact path="/orders" element={<OrdersPage/>} />
+      <Route exact path="/reports" element={<ReportsPage/>} />
       <Route  path="/orderDetails" element={<OrderDetailsPage/>} />
       <Route  path="/userList" element={<UserListPage/>} />
       <Route  path="/productList" element={<ProductListPage/>} />

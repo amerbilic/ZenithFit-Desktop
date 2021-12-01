@@ -6,8 +6,8 @@ class UsersPage extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className="u-t-center d-flex flex-column ">
-          <div className="heading d-flex flex-row align-items-center justify-content-center">
+        <div className="u-t-center d-flex flex-column">
+          <div className="heading d-flex flex-row">
             <BackChevronLink to="/" />
             <h1>Users Admin Panel</h1>
           </div>
@@ -17,7 +17,7 @@ class UsersPage extends React.PureComponent {
                 <span role="img" className="button-icon">
                   ⚙
                 </span>
-               New User
+                Top 10 Customers
               </button>
             </Link>
             <Link to="/userList">
@@ -25,7 +25,23 @@ class UsersPage extends React.PureComponent {
                 <span role="img" className="button-icon">
                   🗄️
                 </span>
-                View Users
+                Top 10 Articles
+              </button>
+            </Link>
+            <Link to="/userList">
+              <button type="button" className="btn-chunky">
+                <span role="img" className="button-icon">
+                  🗄️
+                </span>
+               Articles with best ratings
+              </button>
+            </Link>
+            <Link to="/userList">
+              <button type="button" className="btn-chunky">
+                <span role="img" className="button-icon">
+                  🗄️
+                </span>
+               Orders between dates
               </button>
             </Link>
           </div>

@@ -35,7 +35,7 @@ const UserListPage = () => {
   return (
     <div>
       <div className="u-t-center d-flex flex-column">
-        <div className="heading d-flex flex-row">
+      <div className="heading d-flex flex-row align-items-center justify-content-center">
           <BackChevronLink to="/" />
           <h1>User List</h1>
         </div>
