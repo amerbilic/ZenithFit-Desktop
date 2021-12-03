@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import SelectInput from '../atoms/selectInput'
 import DataTable from '../molecules/dataTable'
 import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
-import ViewDetailsButton from '../atoms/viewDetailsButton'
 import BackChevronLink from '../atoms/backChevronLink'
 import { readableDate } from '../../helpers/readableDate'
-
 const UserListPage = () => {
   const [users, setUsers] = useState([])
   const [searchEmail, setSearchEmail] = useState('')
@@ -61,7 +58,7 @@ const UserListPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+      <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row align-items-center justify-content-center">
           <BackChevronLink to="/users" />
           <h1>User List</h1>

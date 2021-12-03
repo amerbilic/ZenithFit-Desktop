@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 const TableRow = ({ fields }) => {
   return (
-    <tr>
+    <tr className="bg-secondary bg-gradient">
       {fields.map(field => (
-        <td>{field}</td>
+        <td className="fc-red">{field}</td>
       ))}
     </tr>
   )

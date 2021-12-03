@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import BackChevronLink from '../atoms/backChevronLink'
 import axios from 'axios'
 
@@ -55,92 +55,94 @@ const UserAddPage = () => {
       lastname: enteredLastName
     })
 
-    SetEmailInput('');
-    SetUsernameInput('');
-    SetPasswordInput('');
-    setFirstName('');
-    setLastName('');
+    SetEmailInput('')
+    SetUsernameInput('')
+    SetPasswordInput('')
+    setFirstName('')
+    setLastName('')
   }
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center">
-      <div className="u-t-center d-flex flex-column">
-      <div className="heading d-flex flex-row align-items-center justify-content-center">
-          <BackChevronLink to="/users" />
-          <h1>Create New User</h1>
+    <Fragment>
+      <div className="mainDiv d-flex flex-column align-items-center justify-content-center">
+        <div className="u-t-center d-flex flex-column">
+          <div className="heading d-flex flex-row align-items-center justify-content-center">
+            <BackChevronLink to="/users" />
+            <h1>Create New User</h1>
+          </div>
         </div>
+        <form onSubmit={submitHandler}>
+          <div class="mb-3 w-100">
+            <label for="Email" class="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              class="form-control"
+              id="Email"
+              placeholder="example@mail.com"
+              value={emailInput}
+              onChange={emailHandler}
+            />
+          </div>
+          <div class="mb-3 w-100">
+            <label for="Username" class="form-label">
+              Username
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="Username"
+              placeholder="andrew_933"
+              value={usernameInput}
+              onChange={usernameHandler}
+            />
+          </div>
+          <div class="mb-3 w-100">
+            <label for="FirstName" class="form-label">
+              First Name
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="FirstName"
+              placeholder="Andrew"
+              value={firstNameInput}
+              onChange={firstNameHandler}
+            />
+          </div>
+          <div class="mb-3 w-100">
+            <label for="LastName" class="form-label">
+              Last Name
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="LastName"
+              placeholder="Garfield"
+              value={lastNameInput}
+              onChange={lastNameHandler}
+            />
+          </div>
+          <div class="mb-3 w-100">
+            <label for="Password" class="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              class="form-control"
+              id="Password"
+              placeholder="*******"
+              value={passwordInput}
+              onChange={passwordHandler}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary btn-dark">
+            Submit
+          </button>
+        </form>
       </div>
-      <form onSubmit={submitHandler}>
-        <div class="mb-3 w-100">
-          <label for="Email" class="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            class="form-control"
-            id="Email"
-            placeholder="example@mail.com"
-            value={emailInput}
-            onChange={emailHandler}
-          />
-        </div>
-        <div class="mb-3 w-100">
-          <label for="Username" class="form-label">
-            Username
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="Username"
-            placeholder="andrew_933"
-            value={usernameInput}
-            onChange={usernameHandler}
-          />
-        </div>
-        <div class="mb-3 w-100">
-          <label for="FirstName" class="form-label">
-            First Name
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="FirstName"
-            placeholder="Andrew"
-            value={firstNameInput}
-            onChange={firstNameHandler}
-          />
-        </div>
-        <div class="mb-3 w-100">
-          <label for="LastName" class="form-label">
-            Last Name
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="LastName"
-            placeholder="Garfield"
-            value={lastNameInput}
-            onChange={lastNameHandler}
-          />
-        </div>
-        <div class="mb-3 w-100">
-          <label for="Password" class="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            class="form-control"
-            id="Password"
-            placeholder="*******"
-            value={passwordInput}
-            onChange={passwordHandler}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary btn-dark">
-          Submit
-        </button>
-      </form>
-    </div>
+    </Fragment>
   )
 }
 

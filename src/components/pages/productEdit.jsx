@@ -89,7 +89,7 @@ const ProductEditPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column">
+      <div className="mainDiv u-t-center d-flex flex-column">
         <div className="heading d-flex flex-row">
           <BackChevronLink to="/home" />
           <h1>{nameInput}</h1>

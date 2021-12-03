@@ -60,10 +60,10 @@ const ProductListPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+      <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row ">
           <BackChevronLink to="/products" />
-          <h1>Products</h1>
+          <h1 className="fw-bold">Products</h1>
           <input
             type="text"
             className="mx-3"

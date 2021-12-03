@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import SelectInput from '../atoms/selectInput'
 import DataTable from '../molecules/dataTable'
 import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
@@ -33,7 +32,7 @@ const OrdersPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+      <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row align-items-center justify-content-center">
           <BackChevronLink to="/home" />
           <h1>Orders List</h1>

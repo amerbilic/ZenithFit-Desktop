@@ -6,7 +6,7 @@ class UsersPage extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+        <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
           <div className="heading d-flex flex-row">
             <BackChevronLink to="/home" />
             <h1>Reports</h1>

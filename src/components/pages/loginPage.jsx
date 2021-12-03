@@ -60,7 +60,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="u-t-center mt-5">
+    <div className="mainDiv u-t-center mt-5">
       <h1 className="fw-bold">Zenith Fit Admin</h1>
       <div className="menu-wrapper">
         <form

@@ -10,7 +10,7 @@ const BackChevronLink = ({ to }) => (
       height="32"
       fill="white"
       className="bi bi-chevron-left"
-      viewBox="0 0 16 16"
+      viewBox="0 2 15 15"
     >
       <path
         fillRule="evenodd"

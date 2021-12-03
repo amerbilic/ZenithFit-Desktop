@@ -1,10 +1,11 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import { Link } from 'react-router-dom';
 
 class Index extends React.PureComponent {
   render() {
     return (
-      <div className="u-t-center">
+      <Fragment>
+      <div className="mainDiv u-t-center">
         <h1 className="fw-bold">ZenithFit Admin Panel</h1>
         <div className="menu-wrapper">
           <Link to="/users">
@@ -33,6 +34,7 @@ class Index extends React.PureComponent {
           </Link>
         </div>
       </div>
+      </Fragment>
     );
   }
 }

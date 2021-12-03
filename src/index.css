@@ -1,3 +1,117 @@
+:root {
+  font-size: 16px;
+  font-family: 'Urbanist';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #1c1c22;
+  --transition-speed: 600ms;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+.navBar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
+}
+
+.navBar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+  width: 100%;
+  margin: 0;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+}
+
+.link-text {
+  opacity:0;
+  margin-left: 1rem;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.link-text-l {
+  display:none;
+  opacity:0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: var(--text-primary);
+}
+
+.navBar:hover {
+  width: 16rem;
+}
+
+.navBar:hover .link-text {
+  opacity:1;
+  transition: all 0.2s;
+}
+
+.navBar:hover .link-text-l {
+  display:block;
+  opacity:1;
+  transition: all 0.2s;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width:100%;
+}
+
+.fas {
+  color: #6decca;
+  font-size: 32px;
+  min-width: 2rem;
+  transition: var(--transition-speed);
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -21,6 +135,11 @@
   width: 200px;
 }
 
+.mainDiv {
+  padding: 1rem;
+  margin-left: 5rem;
+}
+
 html {
   height: 100%;
 }
@@ -29,16 +148,13 @@ body {
   font-family: 'Urbanist', sans-serif;
   position: relative;
   color: white;
-  background: #484a4d;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: sans-serif;
+  background: #2A2C36;
   overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 16px;
+  padding: 0;
 }
 
 select {
@@ -67,8 +183,6 @@ button {
   border: none;
   appearance: none;
   font-size: 1.2rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
   transition: transform ease-in 0.1s;
   cursor: pointer;
   text-align: center;
@@ -207,8 +321,8 @@ th {
 }
 
 .btn-chunky:hover {
-  background-color: #6decca;
+  background-color: #21242B;
   transition: all 0.3s;
-  border-color: #5dfdcb;
+  border-color: #21242B;
   color: black;
 }

@@ -6,10 +6,10 @@ class UsersPage extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className="u-t-center d-flex flex-column ">
+        <div className="mainDiv u-t-center d-flex flex-column ">
           <div className="heading d-flex flex-row align-items-center justify-content-center">
             <BackChevronLink to="/home" />
-            <h1>Users Admin Panel</h1>
+            <h1 className="fw-bold">Users Admin Panel</h1>
           </div>
           <div className="menu-wrapper">
             <Link to="/userAdd">
