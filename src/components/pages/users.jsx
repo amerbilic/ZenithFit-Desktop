@@ -8,12 +8,12 @@ class UsersPage extends React.PureComponent {
       <div>
         <div className="u-t-center d-flex flex-column ">
           <div className="heading d-flex flex-row align-items-center justify-content-center">
-            <BackChevronLink to="/" />
+            <BackChevronLink to="/home" />
             <h1>Users Admin Panel</h1>
           </div>
           <div className="menu-wrapper">
             <Link to="/userAdd">
-              <button type="button" className="btn-chunky">
+              <button type="button" className="btn-chunky btn-dark">
                 <span role="img" className="button-icon">
                   ⚙
                 </span>
@@ -21,7 +21,7 @@ class UsersPage extends React.PureComponent {
               </button>
             </Link>
             <Link to="/userList">
-              <button type="button" className="btn-chunky">
+              <button type="button" className="btn-chunky btn-dark">
                 <span role="img" className="button-icon">
                   🗄️
                 </span>

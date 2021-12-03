@@ -26,9 +26,10 @@ html {
 }
 
 body {
+  font-family: 'Urbanist', sans-serif;
   position: relative;
   color: white;
-  background:#484a4d;
+  background: #484a4d;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: sans-serif;
@@ -53,15 +54,14 @@ a {
   height: fit-content;
   width: fit-content;
   margin: 8px;
+}
 
-  /* &:hover {
-    opacity: 1;
-    text-decoration: none;
-  }*/
+a:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 
 button {
-  background-color: white;
   padding: 8px 16px;
   border-radius: 10px;
   border: none;
@@ -75,10 +75,21 @@ button {
   justify-content: center;
   align-items: center;
   display: flex;
+  transition: all 0.3s;
+}
 
-  /* &:hover {
-    transform: scale(1.05);
-  }*/
+button:hover {
+  background-color: #5dfdcb;
+  transition: all 0.3s;
+  border-color: #5dfdcb;
+  color: black;
+}
+
+.LoginButton:hover {
+  background-color: #5dfdcb;
+  transition: all 0.3s;
+  border-color: #5dfdcb;
+  color: black;
 }
 
 .u-t-center {
@@ -132,10 +143,10 @@ th {
 
 .button-icon {
   margin-right: 5px;
+}
 
-  /*&:hover {
-    transform: scale(1.25);
-  }*/
+.button-icon:hover {
+  transform: scale(1.25);
 }
 
 .dataTable {
@@ -193,4 +204,11 @@ th {
 
 .btn-chunky {
   height: 85px;
+}
+
+.btn-chunky:hover {
+  background-color: #6decca;
+  transition: all 0.3s;
+  border-color: #5dfdcb;
+  color: black;
 }

@@ -91,7 +91,7 @@ const ProductEditPage = () => {
     <div>
       <div className="u-t-center d-flex flex-column">
         <div className="heading d-flex flex-row">
-          <BackChevronLink to="/" />
+          <BackChevronLink to="/home" />
           <h1>{nameInput}</h1>
         </div>
       </div>
@@ -145,7 +145,7 @@ const ProductEditPage = () => {
             ))}
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary btn-dark w-100">
           Submit
         </button>
       </form>

@@ -37,10 +37,10 @@ const OrderDetailsPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column">
+      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row">
-          <BackChevronLink to="/" />
-          <h1>Orders List</h1>
+          <BackChevronLink to="/home" />
+          <h1>Order Details</h1>
         </div>
         <DataTable>
           <TableHeader headings={['Name', 'Quantity', 'Price', 'Total']} />

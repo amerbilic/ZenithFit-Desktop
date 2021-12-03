@@ -33,9 +33,9 @@ const OrdersPage = () => {
 
   return (
     <div>
-      <div className="u-t-center d-flex flex-column">
-        <div className="heading d-flex flex-row">
-          <BackChevronLink to="/" />
+      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+        <div className="heading d-flex flex-row align-items-center justify-content-center">
+          <BackChevronLink to="/home" />
           <h1>Orders List</h1>
         </div>
         <DataTable>

@@ -4,13 +4,13 @@ import BackChevronLink from '../atoms/backChevronLink'
 const ProductAddPage = () => {
   return (
     <div>
-      <div className="u-t-center d-flex flex-column">
-        <div className="heading d-flex flex-row">
-          <BackChevronLink to="/" />
+      <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
+        <div className="heading d-flex flex-row ">
+          <BackChevronLink to="/products" />
           <h1>Create New Article</h1>
         </div>
       </div>
-      <form>
+      <form className="d-flex flex-column align-items-center justify-content-center">
         <div class="mb-3 w-50">
           <label for="Name" class="form-label">
             Name

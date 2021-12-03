@@ -66,7 +66,7 @@ const UserAddPage = () => {
     <div className="d-flex flex-column align-items-center justify-content-center">
       <div className="u-t-center d-flex flex-column">
       <div className="heading d-flex flex-row align-items-center justify-content-center">
-          <BackChevronLink to="/" />
+          <BackChevronLink to="/users" />
           <h1>Create New User</h1>
         </div>
       </div>
@@ -136,7 +136,7 @@ const UserAddPage = () => {
             onChange={passwordHandler}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary btn-dark">
           Submit
         </button>
       </form>
