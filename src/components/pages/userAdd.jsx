@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import BackChevronLink from '../atoms/backChevronLink'
 import axios from 'axios'
 import {motion} from 'framer-motion'
 
@@ -72,13 +71,12 @@ const UserAddPage = () => {
   >
     <Fragment>
       <div className="mainDiv d-flex flex-column align-items-center justify-content-center">
-        <div className="u-t-center d-flex flex-column">
-          <div className="heading d-flex flex-row align-items-center justify-content-center">
-            <BackChevronLink to="/users" />
+        <div className="u-t-center">
+          <div className="heading">
             <h1 className="mainTitle">Create New User</h1>
           </div>
         </div>
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="d-flex flex-column align-items-center justify-content-center">
           <div class="mb-3 w-100">
             <label for="Email" class="form-label">
               Email address
@@ -144,7 +142,7 @@ const UserAddPage = () => {
               onChange={passwordHandler}
             />
           </div>
-          <button type="submit" className="btn btn-primary btn-dark">
+          <button type="submit" className="LoginButton btn btn-dark w-100">
             Submit
           </button>
         </form>

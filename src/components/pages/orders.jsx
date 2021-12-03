@@ -4,7 +4,6 @@ import DataTable from '../molecules/dataTable'
 import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import ViewDetailsButton from '../atoms/viewDetailsButton'
-import BackChevronLink from '../atoms/backChevronLink'
 import {readableDate} from '../../helpers/readableDate'
 import {motion} from 'framer-motion'
 
@@ -41,11 +40,10 @@ const OrdersPage = () => {
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row align-items-center justify-content-center">
-          <BackChevronLink to="/home" />
           <h1 className="mainTitle">Orders List</h1>
         </div>
         <DataTable>
-          <TableHeader headings={['ID', 'Total', 'Username', "First Name", "Last Name", 'Created']} />
+          <TableHeader headings={['ID', 'Total', 'Username', "First Name", "Last Name", 'Created', "Action"]} />
           {orders.map(order => (
             <TableRow  key={order.id}
               fields={[

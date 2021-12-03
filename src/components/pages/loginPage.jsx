@@ -7,11 +7,11 @@ import {motion} from 'framer-motion'
 const LoginPage = () => {
   const [emailInput, setEmailInput] = useState('')
   const [passwordInput, setPasswordInput] = useState('')
-  const [userStatus, setUserStatus] = useState('')
   const navigate = useNavigate()
 
   const loginHandler = async event => {
     event.preventDefault()
+    let status = 1;
     const userLogin = frmData => {
       return new Promise(async (resolve, reject) => {
         try {
@@ -21,8 +21,7 @@ const LoginPage = () => {
           )
           resolve(res.data)
           const user = jwt_decode(res.data.accessToken)
-          setUserStatus(user.userStatus)
-          console.log(userStatus)
+          status = user.userStatus;
           localStorage.setItem('accessToken', res.data.accessToken)
           localStorage.setItem('expTime', user.exp)
           localStorage.setItem(
@@ -43,7 +42,7 @@ const LoginPage = () => {
       if (isAuth.state === 'error') {
         alert('Invalid login credentials.')
       }
-      if (userStatus !== 2) throw new Error('You are not an administrator.')
+      if (status !== 2) throw new Error('You are not an administrator.')
       navigate('/home')
     } catch (error) {
       alert('Invalid login credentials.')

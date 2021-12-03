@@ -3,7 +3,6 @@ import axios from 'axios'
 import DataTable from '../../molecules/dataTable'
 import TableHeader from '../../atoms/tableHeader'
 import TableRow from '../../atoms/tableRow'
-import BackChevronLink from '../../atoms/backChevronLink'
 import { readableDate } from '../../../helpers/readableDate'
 import {motion} from 'framer-motion'
 
@@ -42,7 +41,6 @@ const Top10ArticlesPage = () => {
     <div>
       <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row">
-          <BackChevronLink to="/reports" />
           <h1 className="mainTitle">Top 10 Articles</h1>
         </div>
         <DataTable>

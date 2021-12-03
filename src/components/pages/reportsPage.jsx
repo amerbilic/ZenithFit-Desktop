@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BackChevronLink from '../atoms/backChevronLink'
 import {motion} from 'framer-motion'
 
 class UsersPage extends React.PureComponent {
@@ -15,7 +14,6 @@ class UsersPage extends React.PureComponent {
       <div>
         <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
           <div className="heading d-flex flex-row">
-            <BackChevronLink to="/home" />
             <h1 className="mainTitle">Reports</h1>
           </div>
           <div className="menu-wrapper">

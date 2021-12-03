@@ -3,7 +3,6 @@ import axios from 'axios'
 import DataTable from '../molecules/dataTable'
 import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
-import BackChevronLink from '../atoms/backChevronLink'
 import { readableDate } from '../../helpers/readableDate'
 import {motion} from 'framer-motion'
 
@@ -68,18 +67,17 @@ const UserListPage = () => {
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row align-items-center justify-content-center">
-          <BackChevronLink to="/users" />
           <h1 className="mainTitle">User List</h1>
           <input
             type="text"
-            className="mx-3"
+            className="searchInput mx-3"
             value={searchEmail}
             onChange={emailHandler}
             placeholder="Email..."
           />
           <input
             type="text"
-            className="mx-3"
+            className="searchInput mx-3"
             value={searchUsername}
             onChange={usernameHandler}
             placeholder="Username..."
