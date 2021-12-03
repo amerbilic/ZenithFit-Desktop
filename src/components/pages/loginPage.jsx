@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import jwt_decode from 'jwt-decode'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 const LoginPage = () => {
   const [emailInput, setEmailInput] = useState('')
@@ -60,8 +61,14 @@ const LoginPage = () => {
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div className="mainDiv u-t-center mt-5">
-      <h1 className="fw-bold">Zenith Fit Admin</h1>
+      <h1 className="mainTitle">Zenith Fit Admin</h1>
       <div className="menu-wrapper">
         <form
           className="d-flex flex-column align-items-center justify-content-center mt-5"
@@ -99,6 +106,7 @@ const LoginPage = () => {
         </form>
       </div>
     </div>
+    </motion.div>
   )
 }
 

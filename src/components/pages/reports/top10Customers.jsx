@@ -5,6 +5,7 @@ import TableHeader from '../../atoms/tableHeader'
 import TableRow from '../../atoms/tableRow'
 import BackChevronLink from '../../atoms/backChevronLink'
 import { readableDate } from '../../../helpers/readableDate'
+import {motion} from 'framer-motion'
 
 const Top10CustomersPage = () => {
   const [customers, setCustomers] = useState([])
@@ -32,11 +33,17 @@ const Top10CustomersPage = () => {
   }, [])
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
       <div className="u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row">
           <BackChevronLink to="/reports" />
-          <h1>Top 10 Customers</h1>
+          <h1 className="mainTitle">Top 10 Customers</h1>
         </div>
         <DataTable>
           <TableHeader
@@ -67,6 +74,7 @@ const Top10CustomersPage = () => {
         </DataTable>
       </div>
     </div>
+    </motion.div>
   )
 }
 

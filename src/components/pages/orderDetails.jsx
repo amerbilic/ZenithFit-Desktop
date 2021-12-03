@@ -4,6 +4,7 @@ import DataTable from '../molecules/dataTable'
 import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import BackChevronLink from '../atoms/backChevronLink'
+import {motion} from 'framer-motion'
 
 const OrderDetailsPage = () => {
   const [orders, setOrders] = useState()
@@ -36,12 +37,17 @@ const OrderDetailsPage = () => {
   }, [orders])
 
   return (
-    
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row">
           <BackChevronLink to="/home" />
-          <h1>Order Details</h1>
+          <h1 className="mainTitle">Order Details</h1>
         </div>
         <DataTable>
           <TableHeader headings={['Name', 'Quantity', 'Price', 'Total']} />
@@ -61,6 +67,7 @@ const OrderDetailsPage = () => {
         </DataTable>
       </div>
     </div>
+    </motion.div>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import BackChevronLink from '../atoms/backChevronLink'
 import axios from 'axios'
+import {motion} from 'framer-motion'
 
 const UserAddPage = () => {
   const [emailInput, SetEmailInput] = useState('')
@@ -63,12 +64,18 @@ const UserAddPage = () => {
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <Fragment>
       <div className="mainDiv d-flex flex-column align-items-center justify-content-center">
         <div className="u-t-center d-flex flex-column">
           <div className="heading d-flex flex-row align-items-center justify-content-center">
             <BackChevronLink to="/users" />
-            <h1>Create New User</h1>
+            <h1 className="mainTitle">Create New User</h1>
           </div>
         </div>
         <form onSubmit={submitHandler}>
@@ -143,6 +150,7 @@ const UserAddPage = () => {
         </form>
       </div>
     </Fragment>
+    </motion.div>
   )
 }
 

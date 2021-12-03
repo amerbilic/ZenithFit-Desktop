@@ -1,13 +1,20 @@
 import React from 'react'
 import BackChevronLink from '../atoms/backChevronLink'
+import {motion} from 'framer-motion'
 
 const ProductAddPage = () => {
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row ">
           <BackChevronLink to="/products" />
-          <h1>Create New Article</h1>
+          <h1 className="mainTitle">Create New Article</h1>
         </div>
       </div>
       <form className="d-flex flex-column align-items-center justify-content-center">
@@ -55,6 +62,7 @@ const ProductAddPage = () => {
         </button>
       </form>
     </div>
+    </motion.div>
   )
 }
 

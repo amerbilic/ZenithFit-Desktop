@@ -5,6 +5,8 @@ import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import BackChevronLink from '../atoms/backChevronLink'
 import { readableDate } from '../../helpers/readableDate'
+import {motion} from 'framer-motion'
+
 const UserListPage = () => {
   const [users, setUsers] = useState([])
   const [searchEmail, setSearchEmail] = useState('')
@@ -57,11 +59,17 @@ const UserListPage = () => {
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row align-items-center justify-content-center">
           <BackChevronLink to="/users" />
-          <h1>User List</h1>
+          <h1 className="mainTitle">User List</h1>
           <input
             type="text"
             className="mx-3"
@@ -106,6 +114,7 @@ const UserListPage = () => {
         </DataTable>
       </div>
     </div>
+    </motion.div>
   )
 }
 

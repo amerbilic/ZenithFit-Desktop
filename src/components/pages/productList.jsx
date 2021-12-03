@@ -6,6 +6,7 @@ import TableHeader from '../atoms/tableHeader'
 import TableRow from '../atoms/tableRow'
 import BackChevronLink from '../atoms/backChevronLink'
 import { readableDate } from '../../helpers/readableDate'
+import {motion} from 'framer-motion'
 
 const ProductListPage = () => {
   const [products, setProducts] = useState([])
@@ -59,11 +60,17 @@ const ProductListPage = () => {
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
       <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div className="heading d-flex flex-row ">
           <BackChevronLink to="/products" />
-          <h1 className="fw-bold">Products</h1>
+          <h1 className="mainTitle">Products</h1>
           <input
             type="text"
             className="mx-3"
@@ -121,6 +128,7 @@ const ProductListPage = () => {
         </DataTable>
       </div>
     </div>
+    </motion.div>
   )
 }
 

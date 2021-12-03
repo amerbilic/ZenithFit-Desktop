@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import BackChevronLink from '../atoms/backChevronLink'
 import axios from 'axios'
+import {motion} from 'framer-motion'
 
 const ProductEditPage = () => {
   const [nameInput, setNameInput] = useState('')
@@ -88,14 +89,20 @@ const ProductEditPage = () => {
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
     <div>
-      <div className="mainDiv u-t-center d-flex flex-column">
-        <div className="heading d-flex flex-row">
+      <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
+        <div className="heading d-flex flex-row ">
           <BackChevronLink to="/home" />
-          <h1>{nameInput}</h1>
+          <h1 className="mainTitle">{nameInput}</h1>
         </div>
       </div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
         <div class="mb-3 w-50">
           <label for="name" class="form-label">
             Name
@@ -145,11 +152,12 @@ const ProductEditPage = () => {
             ))}
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-dark w-100">
+        <button type="submit" class="btn btn-primary btn-dark w-50">
           Submit
         </button>
       </form>
     </div>
+    </motion.div>
   )
 }
 

@@ -1,15 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BackChevronLink from '../atoms/backChevronLink'
+import {motion} from 'framer-motion'
 
 class ProductsPage extends React.PureComponent {
   render() {
     return (
+      <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <div>
         <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
           <div className="heading d-flex flex-row">
             <BackChevronLink to="/home" />
-            <h1>Products Admin Panel</h1>
+            <h1 className="mainTitle">Products Admin Panel</h1>
           </div>
           <div className="menu-wrapper">
             <Link to="/productAdd">
@@ -31,6 +38,7 @@ class ProductsPage extends React.PureComponent {
           </div>
         </div>
       </div>
+      </motion.div>
     )
   }
 }
