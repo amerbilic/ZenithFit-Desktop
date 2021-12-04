@@ -60,7 +60,6 @@ const ProductAddPage = () => {
 
   const selectCategoryHandler = e => {
     setCategorySelected(e.target.value)
-    console.log(categorySelected)
   }
 
   const submitHandler = event => {

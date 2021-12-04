@@ -19,11 +19,12 @@ import OrdersBetweenDatesPage from './components/pages/reports/ordersBetweenDate
 import LoginPage from './components/pages/loginPage'
 import NavBar from './components/organisms/navBar'
 
+
 function App() {
   const location = useLocation()
   return (
     <Fragment>
-      <NavBar />
+      {location.pathname === "/" ? "" :<NavBar />}
       <AnimatePresence exitBeforeEnter initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<LoginPage />} />

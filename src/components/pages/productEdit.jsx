@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import BackChevronLink from '../atoms/backChevronLink'
 import axios from 'axios'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const ProductEditPage = () => {
   const [nameInput, setNameInput] = useState('')
@@ -27,7 +26,6 @@ const ProductEditPage = () => {
       setNameInput(data.name)
       setDescription(data.desc)
       setPrice(data.price)
-      setCategory(data.category)
     }
 
     const fetchCategories = async () => {
@@ -60,6 +58,10 @@ const ProductEditPage = () => {
     setPrice(event.target.value)
   }
 
+  const selectCategoryHandler = e => {
+    setCategory(e.target.value)
+  }
+
   const updateArticle = async frmData => {
     await axios
       .put(`http://192.168.0.13:8000/articles/${productId}`, frmData)
@@ -75,88 +77,90 @@ const ProductEditPage = () => {
   const submitHandler = async event => {
     event.preventDefault()
 
-    const enteredName = nameInput
-    const enteredDesc = description
-    const enteredCategory = category.id
-    const enteredPrice = price
-
     updateArticle({
-      name: enteredName,
-      desc: enteredDesc,
-      category_id: enteredCategory,
-      price: enteredPrice,
+      name: nameInput,
+      desc: description,
+      category_id: parseInt(category),
+      price: price
     })
   }
 
   return (
     <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.4 }}
-  >
-    <div>
-      <div className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
-        <div className="heading d-flex flex-row ">
-          <BackChevronLink to="/home" />
-          <h1 className="mainTitle">{nameInput}</h1>
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <div className="mainDiv d-flex flex-column align-items-center justify-content-center">
+        <div className="u-t-center">
+          <div className="heading">
+            <h1 className="mainTitle">{nameInput}</h1>
+          </div>
         </div>
+        <form
+          onSubmit={submitHandler}
+          className="mainDiv d-flex flex-column align-items-center justify-content-center"
+        >
+          <div className="mb-3 w-100">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              value={nameInput}
+              onChange={nameHandler}
+            />
+          </div>
+          <div className="mb-3 w-100">
+            <label htmlFor="Description" className="form-label">
+              Description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="Description"
+              placeholder="andrew_933"
+              value={description}
+              onChange={descriptionHandler}
+            />
+          </div>
+          <div className="mb-3 w-100">
+            <label htmlFor="Price" className="form-label">
+              Price
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="FirstName"
+              placeholder="Andrew"
+              value={price}
+              onChange={priceHandler}
+            />
+          </div>
+          <div className="mb-3 w-100">
+            <label htmlFor="Category" className="form-label">
+              Category
+            </label>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              onChange={selectCategoryHandler}
+            >
+              {categories.map(category => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button type="submit" className="btn btn-primary btn-dark w-100">
+            Submit
+          </button>
+        </form>
       </div>
-      <form onSubmit={submitHandler} className="mainDiv u-t-center d-flex flex-column align-items-center justify-content-center">
-        <div class="mb-3 w-50">
-          <label for="name" class="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            value={nameInput}
-            onChange={nameHandler}
-          />
-        </div>
-        <div class="mb-3 w-50">
-          <label for="Description" class="form-label">
-            Description
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="Description"
-            placeholder="andrew_933"
-            value={description}
-            onChange={descriptionHandler}
-          />
-        </div>
-        <div class="mb-3 w-50">
-          <label for="Price" class="form-label">
-            Price
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="FirstName"
-            placeholder="Andrew"
-            value={price}
-            onChange={priceHandler}
-          />
-        </div>
-        <div class="mb-3 w-50">
-          <label for="Category" class="form-label">
-            Category
-          </label>
-          <select class="form-select" aria-label="Default select example" onChange={()=>{setCategory(this.selectedIndex)}}>
-            <option value={category.id} selected>{category.name}</option>
-            {categories.map(category => (
-              <option value={category.id}>{category.name}</option>
-            ))}
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary btn-dark w-50">
-          Submit
-        </button>
-      </form>
-    </div>
     </motion.div>
   )
 }
