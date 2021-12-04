@@ -5,7 +5,7 @@ const TableRow = ({ fields }) => {
   return (
     <tr className="bg-secondary bg-gradient">
       {fields.map(field => (
-        <td className="fc-red">{field}</td>
+        <td key ={Math.random()} className="fc-red">{field}</td>
       ))}
     </tr>
   )

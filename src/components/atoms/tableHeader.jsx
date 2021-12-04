@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TableHeader = ({ headings }) => (
   <tr>
     {headings.map((heading) => (
-      <th className="bg-dark">
+      <th className="bg-dark" key={heading}>
         {heading}
       </th>
     ))}

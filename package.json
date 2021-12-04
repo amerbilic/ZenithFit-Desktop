@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
     "bootstrap": "^5.0.0-beta1",
+    "cloudinary-react": "^1.7.0",
     "electron-is-dev": "^1.2.0",
     "framer-motion": "4.1.17",
     "immer": "^9.0.6",

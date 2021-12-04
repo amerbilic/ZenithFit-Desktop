@@ -42,17 +42,12 @@ const UserAddPage = () => {
   const submitHandler = async event => {
     event.preventDefault()
 
-    const enteredEmail = emailInput
-    const enteredPassword = passwordInput
-    const enteredUsername = usernameInput
-    const enteredFirstName = firstNameInput
-    const enteredLastName = lastNameInput
     createUser({
-      email: enteredEmail,
-      password: enteredPassword,
-      username: enteredUsername,
-      firstname: enteredFirstName,
-      lastname: enteredLastName
+      email: emailInput,
+      password: passwordInput,
+      username: usernameInput,
+      firstname: firstNameInput,
+      lastname: lastNameInput
     })
 
     SetEmailInput('')
@@ -77,65 +72,65 @@ const UserAddPage = () => {
           </div>
         </div>
         <form onSubmit={submitHandler} className="d-flex flex-column align-items-center justify-content-center">
-          <div class="mb-3 w-100">
-            <label for="Email" class="form-label">
+          <div className="mb-3 w-100">
+            <label htmlFor="Email" className="form-label">
               Email address
             </label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="Email"
               placeholder="example@mail.com"
               value={emailInput}
               onChange={emailHandler}
             />
           </div>
-          <div class="mb-3 w-100">
-            <label for="Username" class="form-label">
+          <div className="mb-3 w-100">
+            <label htmlFor="Username" className="form-label">
               Username
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="Username"
               placeholder="andrew_933"
               value={usernameInput}
               onChange={usernameHandler}
             />
           </div>
-          <div class="mb-3 w-100">
-            <label for="FirstName" class="form-label">
+          <div className="mb-3 w-100">
+            <label htmlFor="FirstName" className="form-label">
               First Name
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="FirstName"
               placeholder="Andrew"
               value={firstNameInput}
               onChange={firstNameHandler}
             />
           </div>
-          <div class="mb-3 w-100">
-            <label for="LastName" class="form-label">
+          <div className="mb-3 w-100">
+            <label htmlFor="LastName" className="form-label">
               Last Name
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="LastName"
               placeholder="Garfield"
               value={lastNameInput}
               onChange={lastNameHandler}
             />
           </div>
-          <div class="mb-3 w-100">
-            <label for="Password" class="form-label">
+          <div className="mb-3 w-100">
+            <label htmlFor="Password" className="form-label">
               Password
             </label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               id="Password"
               placeholder="*******"
               value={passwordInput}
