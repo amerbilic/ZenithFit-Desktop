@@ -100,7 +100,7 @@ const ProductEditPage = () => {
         </div>
         <form
           onSubmit={submitHandler}
-          className="mainDiv d-flex flex-column align-items-center justify-content-center"
+          className="d-flex flex-column align-items-center justify-content-center"
         >
           <div className="mb-3 w-100">
             <label htmlFor="name" className="form-label">
